@@ -1,5 +1,5 @@
 {
-  "name": "untitled-folder",
+  "name": "lab-6-rds-lambda",
   "version": "1.0.0",
   "main": "index.mjs",
   "scripts": {
@@ -9,7 +9,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "mysql": "^2.18.1",
     "mysql2": "^3.9.7"
   }
 }
