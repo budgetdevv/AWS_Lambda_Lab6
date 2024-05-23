@@ -465,3 +465,4 @@ FodyWeavers.xsd
 
 # Ignore DatabaseConfig.json
 /DatabaseConfig.json
+/Archive.zip
