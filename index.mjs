@@ -53,7 +53,6 @@ async function tryQueryDB(connection, query, parameters=null)
 
 export const handler = async (event, context, callback) =>
 {
-    let sql;
     context.callbackWaitsForEmptyEventLoop = false;
 
     try
@@ -76,10 +75,12 @@ export const handler = async (event, context, callback) =>
 
         catch (error)
         {
-            console.error(```Error while reading ${DB_CONFIG_PATH}. Regenerating config...\nError: ${error}```);
+            console.error(`Error while reading ${DB_CONFIG_PATH}. Regenerating config...\nError: ${error}`);
 
-            let json = JSON.stringify(new DatabaseConfig());
+            // Pretty format the JSON.
+            let json = JSON.stringify(new DatabaseConfig(), null, 2);
 
+            // Doubt this works - AWS Lambda's file system is readonly.
             await fs.writeFile(DB_CONFIG_PATH, json);
 
             return callback(error);
@@ -114,3 +115,10 @@ export const handler = async (event, context, callback) =>
         return callback(err);
     }
 };
+
+// This is for running code locally. We mock context and callback.
+
+// let context = {};
+// let callback = () => {}
+//
+// handler(null, context, callback);

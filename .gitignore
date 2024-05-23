@@ -463,5 +463,5 @@ MigrationBackup/
 FodyWeavers.xsd
 .DS_Store
 
-# Ignore the MLNet/Models folder
-BistroBarista/Modules/MLNet/Models
+# Ignore DatabaseConfig.json
+/DatabaseConfig.json
