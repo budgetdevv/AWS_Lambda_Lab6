@@ -27,7 +27,6 @@ class DBQueryResult
     error;
 }
 
-
 async function tryQueryDB(connection, query, parameters=null)
 {
     /**
@@ -118,7 +117,13 @@ export const handler = async (event, context, callback) =>
 
 // This is for running code locally. We mock context and callback.
 
-// let context = {};
-// let callback = () => {}
-//
-// handler(null, context, callback);
+if (false)
+{
+    let context = { };
+    let callback = (_, data) =>
+    {
+        console.log(data)
+    }
+
+    await handler(null, context, callback);
+}
