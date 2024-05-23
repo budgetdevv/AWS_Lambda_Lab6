@@ -1,27 +1,3 @@
-// // Import mysql library
-// import mysql from 'mysql';
-//
-// // Connect to the Amazon DBS companies\_job that was created in Lab 03
-// const con = mysql.createConnection({
-//     host: "companies-jobs.cnl7vfgucvoi.us-east-1.rds.amazonaws.com",
-//     user: "admin",
-//     password: "password",
-//     port: "3306",
-//     database: "companies_jobs"
-// });
-//
-// export const handler = (event, context, callback) => {
-//     let sql;
-//     context.callbackWaitsForEmptyEventLoop = false;
-//     sql = "SELECT * from `companies_jobs`.`jobs`;";
-//
-//     con.query(sql, function (err, result) {
-//         if (err) throw err;
-//         return callback(null, result);
-//     });
-// };
-
-
 // Import mysql library
 import mysql from 'mysql2/promise';
 import fs from 'fs/promises';
